@@ -1,0 +1,11 @@
+#loginpagemainbox {
+    box-sizing: border-box;
+    position: absolute;
+    width: 325px;
+    height: 449px;
+    left: 18px;
+    top: 147px;
+    background: linear-gradient(180.04deg, #1B2AB1 40.01%, rgba(24, 19, 108, 0) 130.13%);
+    border: 1px solid #6E7186;
+    filter: blur(4px);
+}

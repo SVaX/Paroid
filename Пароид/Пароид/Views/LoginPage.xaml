@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Пароид.Views.LoginPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#1b2838">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand">
+            <Image Source="mainlogo.png" VerticalOptions="Start" WidthRequest="850" HeightRequest="120" HorizontalOptions="Fill"/>
+            
+            <RelativeLayout>
+                <Frame BackgroundColor="#2a475e" Padding="-1" BorderColor="#1f384d" HeightRequest="550" WidthRequest="375" Margin="8, 0, 0, 5" HorizontalOptions="Fill" VerticalOptions="Start"/>
+                <StackLayout Margin="0, 0, 0, 0">
+                    <Label Text="Войти" TextColor="White" FontSize="32" FontFamily="Galindo" Margin="30, 30, 0, 0"/>
+                    <Label Text="В существующий Пар аккаунт" TextColor="White" FontSize="18" FontFamily="Galindo" Margin="30, 0, 0, 0"/>
+                    <Label Text="Логин" TextColor="#66c0f4" FontSize="18" FontFamily="Galindo" Margin="30, 1, 0, 0"/>
+                    <Frame CornerRadius="10" Padding="0" Margin="25, 1, 0, 0" IsClippedToBounds="True">
+                        <Entry BackgroundColor="#1b2838" x:Name="textBox1" Placeholder="Логин" PlaceholderColor="#424fc2" TextColor="#424fc2"/>
+                    </Frame>
+                    <Label Text="Пароль" TextColor="#66c0f4" FontSize="18" FontFamily="Galindo" Margin="30, 1, 0, 0"/>
+                    <Frame CornerRadius="10" Padding="0" Margin="25, 1, 0, 0" IsClippedToBounds="True">
+                        <Entry BackgroundColor="#1b2838" x:Name="textBox2" Placeholder="Пароль" PlaceholderColor="#424fc2" TextColor="#424fc2"/>
+                    </Frame>
+                    <Button Margin="25, 5, 0,0" Padding="-1" WidthRequest="100" HeightRequest="35" CornerRadius="10" HorizontalOptions="Start" VerticalOptions="FillAndExpand" BackgroundColor="#32D717" Text="Войти" TextColor="#A6FF98" Clicked="Button_Clicked"/>
+                    <Label Margin="25, 5, 0, 0" Text="Нет аккаунта?" TextColor="#2997ff" TextDecorations="Underline">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </RelativeLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
