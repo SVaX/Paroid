@@ -21,7 +21,7 @@ namespace Пароид.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new MainMenuPage());
+            await Navigation.PushModalAsync(new BecomeDeveloperPage());
         } 
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
