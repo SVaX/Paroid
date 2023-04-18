@@ -1,10 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Пароид.Views.MainMenuPageDetail"
-             Title="Главное меню"
-             BackgroundColor="#1B2838">
-    <StackLayout Padding="10">
-    <Label Text="Добро пожаловать, username"/>
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="Пароид.Views.MainMenuPageDetail"
+			 Title="Главное меню"
+			 BackgroundColor="#1B2838">
+	<StackLayout Padding="10">
+		<Label Text="Добро пожаловать, username"/>
+        <ListView x:Name="appsList" HasUnevenRows="True" ItemTapped="appsList_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout>
+                                <Label Text="{Binding AppName}"/>
+                                <Image Source="{Binding AppImage}"/>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
   </StackLayout>
 </ContentPage>

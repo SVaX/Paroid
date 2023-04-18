@@ -16,5 +16,10 @@ namespace Пароид.Views
         {
             InitializeComponent();
         }
+
+        private void appsList_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+
+        }
     }
 }
