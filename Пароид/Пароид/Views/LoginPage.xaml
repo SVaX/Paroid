@@ -17,17 +17,17 @@
                 <!--#endregion-->
                 <StackLayout Margin="0, 0, 0, 0">
                     <!--#region Текста-->
-                    <Label Text="Войти" TextColor="White" FontSize="32" FontFamily="Galindo" Margin="30, 30, 0, 0"/>
-                    <Label Text="В существующий Пар аккаунт" TextColor="White" FontSize="18" FontFamily="Galindo" Margin="30, 0, 0, 0"/>
+                    <Label Text="Войти" FontSize="32" Margin="30, 30, 0, 0"/>
+                    <Label Text="В существующий Пар аккаунт" Margin="30, 0, 0, 0"/>
                     <!--#endregion-->
                     <!--#region Текстбоксы-->
-                    <Label Text="Логин" TextColor="#66c0f4" FontSize="18" FontFamily="Galindo" Margin="30, 1, 0, 0"/>
-                    <Frame CornerRadius="10" Padding="0" Margin="25, 1, 0, 0" IsClippedToBounds="True">
+                    <Label Text="Логин" TextColor="#66c0f4"/>
+                    <Frame StyleClass="EditorFrame">
                         <Entry BackgroundColor="#1b2838" x:Name="loginTextBox" Placeholder="Логин" PlaceholderColor="#424fc2" TextColor="#424fc2"/>
                     </Frame>
 
                     <Label Text="Пароль" TextColor="#66c0f4" FontSize="18" FontFamily="Galindo" Margin="30, 1, 0, 0"/>
-                    <Frame CornerRadius="10" Padding="0" Margin="25, 1, 0, 0" IsClippedToBounds="True">
+                    <Frame StyleClass="EditorFrame">
                         <Entry BackgroundColor="#1b2838" x:Name="passwordTextBox" Placeholder="Пароль" PlaceholderColor="#424fc2" TextColor="#424fc2"/>
                     </Frame>
                     <!--#endregion-->

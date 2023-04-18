@@ -32,6 +32,10 @@ namespace Пароид.Views
             {
                 await Navigation.PushModalAsync(new LibraryPage());
             }
+            else if(item.Title == "Стать разработчиком")
+            {
+                await Navigation.PushModalAsync(new BecomeDeveloperPage());
+            }
             //Detail = new NavigationPage(page);
             //IsPresented = false;
 

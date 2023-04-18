@@ -37,6 +37,7 @@ namespace Пароид.Views
                     new MainMenuPageFlyoutMenuItem { Id = 1, Title = "Библиотека" },
                     new MainMenuPageFlyoutMenuItem { Id = 2, Title = "Профиль" },
                     new MainMenuPageFlyoutMenuItem { Id = 3, Title = "Магазин" },
+                    new MainMenuPageFlyoutMenuItem { Id = 4, Title = "Стать разработчиком" },
                 });
             }
 

@@ -11,19 +11,19 @@
                 <Frame BackgroundColor="#2a475e" Padding="-1" BorderColor="#1f384d" HeightRequest="550" WidthRequest="375" Margin="8, 0, 0, 5" HorizontalOptions="Fill" VerticalOptions="Start"/>
                 <!--#endregion-->
                 <StackLayout Margin="0, 0, 0, 0">
-                    <Label Text="Стать разработчиком" FontSize="26" Grid.Row="0" TextColor="White" Margin="30, 1, 0, 0"/>
+                    <Label Text="Стать разработчиком" FontSize="26" Grid.Row="0" />
                     <!--#region Текстбоксы -->
-                    <Label Text="Email" FontSize="20" Grid.Row="1" TextColor="White" Margin="30, 1, 0, 0"/>
-                    <Frame CornerRadius="10" Padding="0" Grid.Row="2" Margin="25, 1, 0, 0" IsClippedToBounds="True">
-                        <Editor BackgroundColor="#1B2838" x:Name="emailTextBox" Grid.Row="2" TextColor="White"/>
+                    <Label Text="Email" FontSize="20" Grid.Row="1" />
+                    <Frame  Grid.Row="2" StyleClass="EditorFrame">
+                        <Editor  x:Name="emailTextBox" Grid.Row="2"/>
                     </Frame>
                     
-                    <Label Text="Код подтверждения" FontSize="20" Grid.Row="3" IsVisible="true" x:Name="codeLabel" TextColor="White" Margin="30, 1, 0, 0"/>
-                    <Frame CornerRadius="10" Padding="0" Grid.Row="4" Margin="25, 1, 0, 0" IsClippedToBounds="True">
-                        <Editor BackgroundColor="#1B2838" x:Name="codeTextBox" IsVisible="true" TextColor="White"/>
+                    <Label Text="Код подтверждения" FontSize="20" Grid.Row="3" IsVisible="true" x:Name="codeLabel" />
+                    <Frame  Grid.Row="4" StyleClass="EditorFrame">
+                        <Editor  x:Name="codeTextBox" IsVisible="true"/>
                     </Frame>
                     <!--#endregion -->
-                    <Button CornerRadius="10" x:Name="sendCodeTextBox" Pressed="sendCodeTextBox_Pressed" IsEnabled="True" Grid.Row="5" Margin="30, 1, 0, 0" BackgroundColor="#32D717" Text="Отправить код" TextColor="#A6FF98"/>
+                    <Button x:Name="sendCodeTextBox" Pressed="sendCodeTextBox_Pressed" IsEnabled="True" Grid.Row="5" Text="Отправить код" Margin="30,0,0,0"/>
                 
                 </StackLayout>
             </RelativeLayout>

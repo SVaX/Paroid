@@ -8,32 +8,39 @@
     <Application.Resources>
         <ResourceDictionary>
             <Color x:Key="Primary">#303030</Color>
+            
             <Style TargetType="Button">
-                <Setter Property="TextColor" Value="White"></Setter>
-                <Setter Property="VisualStateManager.VisualStateGroups">
-                    <VisualStateGroupList>
-                        <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Normal">
-                                <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState x:Name="Disabled">
-                                <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="#332196F3" />
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateGroupList>
-                </Setter>
+                <Setter Property="TextColor" Value="#A6FF98"></Setter>
+                <Setter Property="WidthRequest" Value="120"/>
+                <Setter Property="HeightRequest" Value="35"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="BackgroundColor" Value="#32D717"/>
             </Style>
 
             <Color x:Key="primary-back-title-color">#303030</Color>
             <Color x:Key="primary-title-color">#FFFFFF</Color>
-            <!-- Pallete-end -->
+
             <Style ApplyToDerivedTypes="true" TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource Key=primary-back-title-color}"/>
                 <Setter Property="BarTextColor" Value="{StaticResource Key=primary-title-color}"/>
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="18"></Setter>
+                <Setter Property="FontFamily" Value="Galindo"></Setter>
+                <Setter Property="Margin" Value="30,1,0,0"/>
+            </Style>
+            
+            <Style Class="EditorFrame" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Margin" Value="25,1,0,0"/>
+                <Setter Property="IsClippedToBounds" Value="True"/>
+            </Style>
+
+            <Style TargetType="Editor">
+                <Setter Property="BackgroundColor" Value="#1B2838"/>
+                <Setter Property="TextColor" Value="White"/>
             </Style>
         </ResourceDictionary>        
     </Application.Resources>
