@@ -10,11 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace Пароид.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ShopPage : ContentPage
+    public partial class AppCommentPage : ContentPage
     {
         public ObservableCollection<string> Items { get; set; }
 
-        public ShopPage()
+        public AppCommentPage()
         {
             InitializeComponent();
 

@@ -1,17 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Пароид.Views.GameInfoPage"
-             NavigationPage.HasBackButton="True">
-    <ContentPage.Content>
-        
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <AbsoluteLayout>
-                <ImageButton Source="backbutton.png" BackgroundColor="Transparent" Clicked="Button_Clicked" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".95, .95, 80, 80" WidthRequest="75" HeightRequest="75" VerticalOptions="End" HorizontalOptions="End"/>
-            </AbsoluteLayout>
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+             xmlns:pages="clr-namespace:Пароид.Views">
+  <FlyoutPage.Flyout>
+    <pages:GameInfoPageFlyout x:Name="FlyoutPage" />
+  </FlyoutPage.Flyout>
+  <FlyoutPage.Detail>
+    <NavigationPage>
+      <x:Arguments>
+        <pages:GameInfoPageDetail />
+      </x:Arguments>
+    </NavigationPage>
+  </FlyoutPage.Detail>
+</FlyoutPage>

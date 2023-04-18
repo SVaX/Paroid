@@ -3,23 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Пароид.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class GameInfoPage : ContentPage
+    public partial class GameInfoPage : FlyoutPage
     {
         public GameInfoPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasBackButton(this, true);
+            FlyoutPage.ListView.ItemSelected += ListView_ItemSelected;
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            await Navigation.PushModalAsync(new ShopPage());
+            var item = e.SelectedItem as GameInfoPageFlyoutMenuItem;
+            if (item == null)
+                return;
+
+            var page = (Page)Activator.CreateInstance(item.TargetType);
+            page.Title = item.Title;
+
+            Detail = new NavigationPage(page);
+            IsPresented = false;
+
+            FlyoutPage.ListView.SelectedItem = null;
         }
     }
 }

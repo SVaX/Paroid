@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Пароид.Views.MainMenuPageFlyout"
+             x:Class="Пароид.Views.GameInfoPageFlyout"
              Title="Flyout">
   <StackLayout>
     <ListView x:Name="MenuItemsListView"
@@ -9,7 +9,7 @@
               HasUnevenRows="true"
               ItemsSource="{Binding MenuItems}">
       <ListView.Header>
-                <Grid BackgroundColor="#303030">
+        <Grid BackgroundColor="#03A9F4">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="*"/>
@@ -24,7 +24,7 @@
           <Label
               Grid.Column="1"
               Grid.Row="2"
-              Text="Пар"
+              Text="AppName"
               Style="{DynamicResource SubtitleStyle}"/>
         </Grid>
       </ListView.Header>

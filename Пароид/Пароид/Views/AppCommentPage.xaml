@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Пароид.Views.AppCommentPage">
+    <StackLayout Padding="0,0,0,0">
+        <AbsoluteLayout>
+            <Button Text="Back" Clicked="Button_Clicked" HeightRequest="40" WidthRequest="400" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,0,0"/>
+        </AbsoluteLayout>
+        <Grid RowDefinitions="100" Padding="0,0,0,0" Margin="0,0,0,0">
+            <ImageButton Source="logo.png" Grid.Column="0" Grid.Row="0" WidthRequest="120" HeightRequest="75" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="ImageButton_Clicked"/>
+            <Editor Text="there is some text about game which you are currently looking at" MaxLength="72" Grid.Column="1" Grid.Row="0" IsReadOnly="True" >
+                <Editor.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="TapGestureRecognizer_Tapped" />
+                </Editor.GestureRecognizers>
+            </Editor>
+        </Grid>
+    </StackLayout>
+</ContentPage>

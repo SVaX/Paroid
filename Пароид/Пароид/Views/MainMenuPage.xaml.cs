@@ -24,9 +24,9 @@ namespace Пароид.Views
             if (item == null)
                 return;
 
-            if(item.Title == "Магазин игр")
+            if(item.Title == "Желаемое")
             {
-                await Navigation.PushModalAsync(new ShopPage());
+                await Navigation.PushModalAsync(new WantedPage());
             }
             //Detail = new NavigationPage(page);
             //IsPresented = false;
