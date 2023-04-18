@@ -13,30 +13,31 @@ using Xamarin.Forms.Xaml;
 namespace Пароид.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainMenuPageFlyout : ContentPage
+    public partial class AdminAppsPageFlyout : ContentPage
     {
         public ListView ListView;
 
-        public MainMenuPageFlyout()
+        public AdminAppsPageFlyout()
         {
             InitializeComponent();
 
-            BindingContext = new MainMenuPageFlyoutViewModel();
+            BindingContext = new AdminAppsPageFlyoutViewModel();
             ListView = MenuItemsListView;
         }
 
-        private class MainMenuPageFlyoutViewModel : INotifyPropertyChanged
+        private class AdminAppsPageFlyoutViewModel : INotifyPropertyChanged
         {
-            public ObservableCollection<MainMenuPageFlyoutMenuItem> MenuItems { get; set; }
+            public ObservableCollection<AdminAppsPageFlyoutMenuItem> MenuItems { get; set; }
 
-            public MainMenuPageFlyoutViewModel()
+            public AdminAppsPageFlyoutViewModel()
             {
-                MenuItems = new ObservableCollection<MainMenuPageFlyoutMenuItem>(new[]
+                MenuItems = new ObservableCollection<AdminAppsPageFlyoutMenuItem>(new[]
                 {
-                    new MainMenuPageFlyoutMenuItem { Id = 0, Title = "Желаемое" },
-                    new MainMenuPageFlyoutMenuItem { Id = 1, Title = "Библиотека" },
-                    new MainMenuPageFlyoutMenuItem { Id = 2, Title = "Профиль" },
-                    new MainMenuPageFlyoutMenuItem { Id = 3, Title = "Магазин" },
+                    new AdminAppsPageFlyoutMenuItem { Id = 0, Title = "Page 1" },
+                    new AdminAppsPageFlyoutMenuItem { Id = 1, Title = "Page 2" },
+                    new AdminAppsPageFlyoutMenuItem { Id = 2, Title = "Page 3" },
+                    new AdminAppsPageFlyoutMenuItem { Id = 3, Title = "Page 4" },
+                    new AdminAppsPageFlyoutMenuItem { Id = 4, Title = "Page 5" },
                 });
             }
 

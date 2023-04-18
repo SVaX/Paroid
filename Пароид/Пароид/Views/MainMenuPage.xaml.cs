@@ -28,6 +28,10 @@ namespace Пароид.Views
             {
                 await Navigation.PushModalAsync(new WantedPage());
             }
+            else if(item.Title == "Библиотека")
+            {
+                await Navigation.PushModalAsync(new LibraryPage());
+            }
             //Detail = new NavigationPage(page);
             //IsPresented = false;
 

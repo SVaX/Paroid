@@ -13,30 +13,31 @@ using Xamarin.Forms.Xaml;
 namespace Пароид.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainMenuPageFlyout : ContentPage
+    public partial class FriendsRequestPageFlyout : ContentPage
     {
         public ListView ListView;
 
-        public MainMenuPageFlyout()
+        public FriendsRequestPageFlyout()
         {
             InitializeComponent();
 
-            BindingContext = new MainMenuPageFlyoutViewModel();
+            BindingContext = new FriendsRequestPageFlyoutViewModel();
             ListView = MenuItemsListView;
         }
 
-        private class MainMenuPageFlyoutViewModel : INotifyPropertyChanged
+        private class FriendsRequestPageFlyoutViewModel : INotifyPropertyChanged
         {
-            public ObservableCollection<MainMenuPageFlyoutMenuItem> MenuItems { get; set; }
+            public ObservableCollection<FriendsRequestPageFlyoutMenuItem> MenuItems { get; set; }
 
-            public MainMenuPageFlyoutViewModel()
+            public FriendsRequestPageFlyoutViewModel()
             {
-                MenuItems = new ObservableCollection<MainMenuPageFlyoutMenuItem>(new[]
+                MenuItems = new ObservableCollection<FriendsRequestPageFlyoutMenuItem>(new[]
                 {
-                    new MainMenuPageFlyoutMenuItem { Id = 0, Title = "Желаемое" },
-                    new MainMenuPageFlyoutMenuItem { Id = 1, Title = "Библиотека" },
-                    new MainMenuPageFlyoutMenuItem { Id = 2, Title = "Профиль" },
-                    new MainMenuPageFlyoutMenuItem { Id = 3, Title = "Магазин" },
+                    new FriendsRequestPageFlyoutMenuItem { Id = 0, Title = "Page 1" },
+                    new FriendsRequestPageFlyoutMenuItem { Id = 1, Title = "Page 2" },
+                    new FriendsRequestPageFlyoutMenuItem { Id = 2, Title = "Page 3" },
+                    new FriendsRequestPageFlyoutMenuItem { Id = 3, Title = "Page 4" },
+                    new FriendsRequestPageFlyoutMenuItem { Id = 4, Title = "Page 5" },
                 });
             }
 

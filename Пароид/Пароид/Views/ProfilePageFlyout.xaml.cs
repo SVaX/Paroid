@@ -13,30 +13,31 @@ using Xamarin.Forms.Xaml;
 namespace Пароид.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainMenuPageFlyout : ContentPage
+    public partial class ProfilePageFlyout : ContentPage
     {
         public ListView ListView;
 
-        public MainMenuPageFlyout()
+        public ProfilePageFlyout()
         {
             InitializeComponent();
 
-            BindingContext = new MainMenuPageFlyoutViewModel();
+            BindingContext = new ProfilePageFlyoutViewModel();
             ListView = MenuItemsListView;
         }
 
-        private class MainMenuPageFlyoutViewModel : INotifyPropertyChanged
+        private class ProfilePageFlyoutViewModel : INotifyPropertyChanged
         {
-            public ObservableCollection<MainMenuPageFlyoutMenuItem> MenuItems { get; set; }
+            public ObservableCollection<ProfilePageFlyoutMenuItem> MenuItems { get; set; }
 
-            public MainMenuPageFlyoutViewModel()
+            public ProfilePageFlyoutViewModel()
             {
-                MenuItems = new ObservableCollection<MainMenuPageFlyoutMenuItem>(new[]
+                MenuItems = new ObservableCollection<ProfilePageFlyoutMenuItem>(new[]
                 {
-                    new MainMenuPageFlyoutMenuItem { Id = 0, Title = "Желаемое" },
-                    new MainMenuPageFlyoutMenuItem { Id = 1, Title = "Библиотека" },
-                    new MainMenuPageFlyoutMenuItem { Id = 2, Title = "Профиль" },
-                    new MainMenuPageFlyoutMenuItem { Id = 3, Title = "Магазин" },
+                    new ProfilePageFlyoutMenuItem { Id = 0, Title = "Page 1" },
+                    new ProfilePageFlyoutMenuItem { Id = 1, Title = "Page 2" },
+                    new ProfilePageFlyoutMenuItem { Id = 2, Title = "Page 3" },
+                    new ProfilePageFlyoutMenuItem { Id = 3, Title = "Page 4" },
+                    new ProfilePageFlyoutMenuItem { Id = 4, Title = "Page 5" },
                 });
             }
 

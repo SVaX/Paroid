@@ -13,30 +13,31 @@ using Xamarin.Forms.Xaml;
 namespace Пароид.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainMenuPageFlyout : ContentPage
+    public partial class AccountReplenishmentPageFlyout : ContentPage
     {
         public ListView ListView;
 
-        public MainMenuPageFlyout()
+        public AccountReplenishmentPageFlyout()
         {
             InitializeComponent();
 
-            BindingContext = new MainMenuPageFlyoutViewModel();
+            BindingContext = new AccountReplenishmentPageFlyoutViewModel();
             ListView = MenuItemsListView;
         }
 
-        private class MainMenuPageFlyoutViewModel : INotifyPropertyChanged
+        private class AccountReplenishmentPageFlyoutViewModel : INotifyPropertyChanged
         {
-            public ObservableCollection<MainMenuPageFlyoutMenuItem> MenuItems { get; set; }
+            public ObservableCollection<AccountReplenishmentPageFlyoutMenuItem> MenuItems { get; set; }
 
-            public MainMenuPageFlyoutViewModel()
+            public AccountReplenishmentPageFlyoutViewModel()
             {
-                MenuItems = new ObservableCollection<MainMenuPageFlyoutMenuItem>(new[]
+                MenuItems = new ObservableCollection<AccountReplenishmentPageFlyoutMenuItem>(new[]
                 {
-                    new MainMenuPageFlyoutMenuItem { Id = 0, Title = "Желаемое" },
-                    new MainMenuPageFlyoutMenuItem { Id = 1, Title = "Библиотека" },
-                    new MainMenuPageFlyoutMenuItem { Id = 2, Title = "Профиль" },
-                    new MainMenuPageFlyoutMenuItem { Id = 3, Title = "Магазин" },
+                    new AccountReplenishmentPageFlyoutMenuItem { Id = 0, Title = "Page 1" },
+                    new AccountReplenishmentPageFlyoutMenuItem { Id = 1, Title = "Page 2" },
+                    new AccountReplenishmentPageFlyoutMenuItem { Id = 2, Title = "Page 3" },
+                    new AccountReplenishmentPageFlyoutMenuItem { Id = 3, Title = "Page 4" },
+                    new AccountReplenishmentPageFlyoutMenuItem { Id = 4, Title = "Page 5" },
                 });
             }
 
