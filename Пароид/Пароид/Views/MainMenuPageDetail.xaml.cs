@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using System.Data.SqlClient;
 
 namespace Пароид.Views
 {
@@ -27,23 +28,53 @@ namespace Пароид.Views
 
         }
 
-        private void getApps()
+        private async void getApps()
         {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://192.168.1.69:7184");
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            try
+            //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-U9I41QJ\SQLEXPRESS;Initial Catalog=Diplom;Trusted_Connection = True");
+            //conn.Open();
+            //SqlCommand command = new SqlCommand("Select * from [Application]", conn);
+            //using (SqlDataReader reader = command.ExecuteReader())
+            //{
+            //    if (reader.Read())
+            //    {
+            //        var smth = reader[0];
+            //    }
+            //}
+            //conn.Close();
+
+            var httpClientHandler = new HttpClientHandler()
             {
-                HttpResponseMessage response = client.GetAsync("/api/Apps").Result;
+                UseDefaultCredentials = true
+            };
+            httpClientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+            var requestUri = "https://192.168.1.69:7184/api/Apps";
+
+            using (var httpClient = new HttpClient(httpClientHandler))
+            {
+                var response = await httpClient.GetAsync(requestUri);
+
                 if (response.IsSuccessStatusCode)
                 {
-                    apps = JsonConvert.DeserializeObject<models.Application[]>(response.Content.ReadAsStringAsync().Result).ToList();
+                    var json = await response.Content.ReadAsStringAsync();
+                    //var app = new models.Application();
+                    //app = JsonConvert.DeserializeObject<models.Application>(json);
                 }
             }
-            catch
-            {
+            //HttpClient client = new HttpClient();
+            //client.BaseAddress = new Uri("https://192.168.1.69:7184");
+            //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            //try
+            //{
+            //    HttpResponseMessage response = client.GetAsync("/api/Apps").Result;
+            //    if (response.IsSuccessStatusCode)
+            //    {
+            //        apps = JsonConvert.DeserializeObject<models.Application[]>(response.Content.ReadAsStringAsync().Result).ToList();
+            //    }
+            //}
+            //catch
+            //{
 
-            }
+            //}
         }
     }
 }
