@@ -13,7 +13,7 @@
                         <ViewCell.View>
                             <StackLayout>
                                 <Label Text="{Binding AppName}"/>
-                                <Image Source="{Binding AppImage}"/>
+                                <Image Source=""/>
                             </StackLayout>
                         </ViewCell.View>
                     </ViewCell>
