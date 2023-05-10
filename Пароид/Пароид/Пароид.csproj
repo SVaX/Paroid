@@ -77,7 +77,7 @@
     <EmbeddedResource Update="Views\AdminUsersPageFlyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\BecomeDeveloperPage.xaml">
+    <EmbeddedResource Update="Views\BecomeDeveloper\BecomeDeveloperPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\CartPage.xaml">

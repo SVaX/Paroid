@@ -18,6 +18,7 @@ namespace DatabaseWebService
 
             services.AddRazorPages();
             services.AddControllers(); // используем контроллеры без представлений
+            services.AddSwaggerGen();
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment env)
@@ -28,6 +29,8 @@ namespace DatabaseWebService
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            app.UseSwagger();
+            app.UseSwaggerUI();
             app.UseHttpsRedirection();
 
             app.UseStaticFiles();
