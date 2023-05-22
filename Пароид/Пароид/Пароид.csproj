@@ -17,157 +17,157 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\AppCommentPage.xaml.cs">
+    <Compile Update="Views\AppCommentPages\AppCommentPage.xaml.cs">
       <DependentUpon>AppCommentPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\LibraryPage.xaml.cs">
+    <Compile Update="Views\LibraryPages\LibraryPage.xaml.cs">
       <DependentUpon>LibraryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\LibraryPageDetail.xaml.cs">
+    <Compile Update="Views\LibraryPages\LibraryPageDetail.xaml.cs">
       <DependentUpon>LibraryPageDetail.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\LibraryPageFlyout.xaml.cs">
+    <Compile Update="Views\LibraryPages\LibraryPageFlyout.xaml.cs">
       <DependentUpon>LibraryPageFlyout.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\AccountReplenishmentPage.xaml">
+    <EmbeddedResource Update="Views\AccountReplenishmentPages\AccountReplenishmentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AccountReplenishmentPageDetail.xaml">
+    <EmbeddedResource Update="Views\AccountReplenishmentPages\AccountReplenishmentPageDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AccountReplenishmentPageFlyout.xaml">
+    <EmbeddedResource Update="Views\AccountReplenishmentPages\AccountReplenishmentPageFlyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AddAppPage.xaml">
+    <EmbeddedResource Update="Views\AddAppPages\AddAppPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AddAppPageDetail.xaml">
+    <EmbeddedResource Update="Views\AddAppPages\AddAppPageDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AddAppPageFlyout.xaml">
+    <EmbeddedResource Update="Views\AddAppPages\AddAppPageFlyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AdminAppsPage.xaml">
+    <EmbeddedResource Update="Views\AdminAppsPages\AdminAppsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AdminAppsPageDetail.xaml">
+    <EmbeddedResource Update="Views\AdminAppsPages\AdminAppsPageDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AdminAppsPageFlyout.xaml">
+    <EmbeddedResource Update="Views\AdminAppsPages\AdminAppsPageFlyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AdminCommentsPage.xaml">
+    <EmbeddedResource Update="Views\AdminCommentsPages\AdminCommentsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AdminCommentsPageDetail.xaml">
+    <EmbeddedResource Update="Views\AdminCommentsPages\AdminCommentsPageDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AdminCommentsPageFlyout.xaml">
+    <EmbeddedResource Update="Views\AdminCommentsPages\AdminCommentsPageFlyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AdminUsersPage.xaml">
+    <EmbeddedResource Update="Views\AdminUsersPages\AdminUsersPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AdminUsersPageDetail.xaml">
+    <EmbeddedResource Update="Views\AdminUsersPages\AdminUsersPageDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AdminUsersPageFlyout.xaml">
+    <EmbeddedResource Update="Views\AdminUsersPages\AdminUsersPageFlyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\BecomeDeveloper\BecomeDeveloperPage.xaml">
+    <EmbeddedResource Update="Views\BecomeDeveloperPages\BecomeDeveloperPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\CartPage.xaml">
+    <EmbeddedResource Update="Views\CartPages\CartPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\CartPageDetail.xaml">
+    <EmbeddedResource Update="Views\CartPages\CartPageDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\CartPageFlyout.xaml">
+    <EmbeddedResource Update="Views\CartPages\CartPageFlyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\FriendsPage.xaml">
+    <EmbeddedResource Update="Views\FriendsPages\FriendsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\FriendsPageDetail.xaml">
+    <EmbeddedResource Update="Views\FriendsPages\FriendsPageDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\FriendsPageFlyout.xaml">
+    <EmbeddedResource Update="Views\FriendsPages\FriendsPageFlyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\FriendsRequestPage.xaml">
+    <EmbeddedResource Update="Views\FriendsRequestPages\FriendsRequestPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\FriendsRequestPageDetail.xaml">
+    <EmbeddedResource Update="Views\FriendsRequestPages\FriendsRequestPageDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\FriendsRequestPageFlyout.xaml">
+    <EmbeddedResource Update="Views\FriendsRequestPages\FriendsRequestPageFlyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\GameInfoPage.xaml">
+    <EmbeddedResource Update="Views\GameInfoPages\GameInfoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\GameInfoPageDetail.xaml">
+    <EmbeddedResource Update="Views\GameInfoPages\GameInfoPageDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\GameInfoPageFlyout.xaml">
+    <EmbeddedResource Update="Views\GameInfoPages\GameInfoPageFlyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\MainMenuPage.xaml">
+    <EmbeddedResource Update="Views\MainMenuPages\MainMenuPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\MainMenuPageDetail.xaml">
+    <EmbeddedResource Update="Views\MainMenuPages\MainMenuPageDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\MainMenuPageFlyout.xaml">
+    <EmbeddedResource Update="Views\MainMenuPages\MainMenuPageFlyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AppCommentPage.xaml">
+    <EmbeddedResource Update="Views\AppCommentPages\AppCommentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\PasswordReminderPage.xaml">
+    <EmbeddedResource Update="Views\PasswordReminderPages\PasswordReminderPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\PaymentPage.xaml">
+    <EmbeddedResource Update="Views\PaymentPages\PaymentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\PaymentPageDetail.xaml">
+    <EmbeddedResource Update="Views\PaymentPages\PaymentPageDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\PaymentPageFlyout.xaml">
+    <EmbeddedResource Update="Views\PaymentPages\PaymentPageFlyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ProfilePage.xaml">
+    <EmbeddedResource Update="Views\ProfilePages\ProfilePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ProfilePageDetail.xaml">
+    <EmbeddedResource Update="Views\ProfilePages\ProfilePageDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ProfilePageFlyout.xaml">
+    <EmbeddedResource Update="Views\ProfilePages\ProfilePageFlyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\RegistrationPage.xaml">
+    <EmbeddedResource Update="Views\RegistrationPages\RegistrationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\LibraryPage.xaml">
+    <EmbeddedResource Update="Views\LibraryPages\LibraryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\LibraryPageDetail.xaml">
+    <EmbeddedResource Update="Views\LibraryPages\LibraryPageDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\LibraryPageFlyout.xaml">
+    <EmbeddedResource Update="Views\LibraryPages\LibraryPageFlyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\WantedPage.xaml">
+    <EmbeddedResource Update="Views\WantedPages\WantedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\WantedPageDetail.xaml">
+    <EmbeddedResource Update="Views\WantedPages\WantedPageDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\WantedPageFlyout.xaml">
+    <EmbeddedResource Update="Views\WantedPages\WantedPageFlyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

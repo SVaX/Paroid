@@ -23,6 +23,7 @@ namespace Пароид.Views
 
             BindingContext = new MainMenuPageFlyoutViewModel();
             ListView = MenuItemsListView;
+            usernameLabel.Text = "UserName";
         }
 
         private class MainMenuPageFlyoutViewModel : INotifyPropertyChanged
@@ -33,11 +34,11 @@ namespace Пароид.Views
             {
                 MenuItems = new ObservableCollection<MainMenuPageFlyoutMenuItem>(new[]
                 {
-                    new MainMenuPageFlyoutMenuItem { Id = 0, Title = "Желаемое" },
+                    new MainMenuPageFlyoutMenuItem { Id = 0, Title = "Магазин" },
                     new MainMenuPageFlyoutMenuItem { Id = 1, Title = "Библиотека" },
-                    new MainMenuPageFlyoutMenuItem { Id = 2, Title = "Профиль" },
-                    new MainMenuPageFlyoutMenuItem { Id = 3, Title = "Магазин" },
-                    new MainMenuPageFlyoutMenuItem { Id = 4, Title = "Стать разработчиком" },
+                    new MainMenuPageFlyoutMenuItem { Id = 2, Title = "Желаемое" },
+                    new MainMenuPageFlyoutMenuItem { Id = 3, Title = "Профиль" },
+                    new MainMenuPageFlyoutMenuItem { Id = 4, Title = "Пополнить счет" },
                 });
             }
 

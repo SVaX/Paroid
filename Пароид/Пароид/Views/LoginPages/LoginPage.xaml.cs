@@ -24,9 +24,14 @@ namespace Пароид.Views
             await Navigation.PushModalAsync(new MainMenuPage());
         } 
 
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            DisplayAlert("test", "test", "ok");
+            await Navigation.PushModalAsync(new RegistrationPage());
+        }
+
+        private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new PasswordReminderPage());
         }
     }
 }

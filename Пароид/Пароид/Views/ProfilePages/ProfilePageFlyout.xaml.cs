@@ -33,11 +33,11 @@ namespace Пароид.Views
             {
                 MenuItems = new ObservableCollection<ProfilePageFlyoutMenuItem>(new[]
                 {
-                    new ProfilePageFlyoutMenuItem { Id = 0, Title = "Page 1" },
-                    new ProfilePageFlyoutMenuItem { Id = 1, Title = "Page 2" },
-                    new ProfilePageFlyoutMenuItem { Id = 2, Title = "Page 3" },
-                    new ProfilePageFlyoutMenuItem { Id = 3, Title = "Page 4" },
-                    new ProfilePageFlyoutMenuItem { Id = 4, Title = "Page 5" },
+                    new ProfilePageFlyoutMenuItem { Id = 0, Title = "Магазин" },
+                    new ProfilePageFlyoutMenuItem { Id = 1, Title = "Библиотека" },
+                    new ProfilePageFlyoutMenuItem { Id = 2, Title = "Желаемое" },
+                    new ProfilePageFlyoutMenuItem { Id = 3, Title = "Профиль" },
+                    new ProfilePageFlyoutMenuItem { Id = 4, Title = "Пополнить счет" },
                 });
             }
 

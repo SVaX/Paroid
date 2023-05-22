@@ -16,5 +16,20 @@ namespace Пароид.Views
         {
             InitializeComponent();
         }
+
+        private async void loginTap_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new LoginPage());
+        }
+
+        private void registerButton_Clicked(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void chooseAvatarButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
