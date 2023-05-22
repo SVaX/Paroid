@@ -12,9 +12,9 @@
 
 Стать разработчиком - Developer Screen - BecomeDeveloperPage.xaml - СДЕЛАН
 
-Регистрация - Registration Screen - RegistrationPage.xaml - НАДА
+Регистрация - Registration Screen - RegistrationPage.xaml - СДЕЛАН
 
-Восстановление пароля - Password Reminder Screen - PasswordReminderPage.xaml - НАДА
+Восстановление пароля - Password Reminder Screen - PasswordReminderPage.xaml - СДЕЛАН
 
 Комментарии к приложению - App Comment Screen - AppCommentPage.xaml - НАДА
 
