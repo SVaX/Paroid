@@ -21,5 +21,10 @@ namespace Пароид.Views
         {
             await Navigation.PushModalAsync(new LoginPage());
         }
+
+        private async void backButton_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new LoginPage());
+        }
     }
 }

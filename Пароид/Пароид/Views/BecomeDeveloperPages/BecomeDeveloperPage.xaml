@@ -5,8 +5,20 @@
     <ContentPage.Content>
         <StackLayout>
             <!--#region Лого + фрейм основной-->
-            <Image Source="logo.png" VerticalOptions="Start" WidthRequest="850" HeightRequest="120" HorizontalOptions="FillAndExpand"/>
-            
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="logo.png" VerticalOptions="Start"  WidthRequest="850" HeightRequest="120" Grid.Column="0" HorizontalOptions="FillAndExpand"/>
+                
+                <Image Source="back.png" VerticalOptions="Center" HorizontalOptions="StartAndExpand" Grid.Column="0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="backButton" Tapped="backButton_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+
             <RelativeLayout>
                 <Frame BackgroundColor="#2a475e" Padding="-1" BorderColor="#1f384d" HeightRequest="550" WidthRequest="375" Margin="8, 0, 0, 5" HorizontalOptions="Fill" VerticalOptions="Start"/>
                 <!--#endregion-->
@@ -19,8 +31,8 @@
                     </Frame>
                     
                     <Label Text="Код подтверждения" FontSize="20" Grid.Row="3" IsVisible="true" x:Name="codeLabel" />
-                    <Frame  Grid.Row="4" StyleClass="EditorFrame">
-                        <Editor  x:Name="codeTextBox" IsVisible="true"/>
+                    <Frame  Grid.Row="4" StyleClass="EditorFrame" IsVisible="false">
+                        <Editor  x:Name="codeTextBox"/>
                     </Frame>
                     <!--#endregion -->
                     <Button x:Name="sendCodeTextBox" Pressed="sendCodeTextBox_Pressed" IsEnabled="True" Grid.Row="5" Text="Отправить код" Margin="30,0,0,0"/>
