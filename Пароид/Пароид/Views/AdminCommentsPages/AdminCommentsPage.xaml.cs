@@ -18,19 +18,24 @@ namespace Пароид.Views
             FlyoutPage.ListView.ItemSelected += ListView_ItemSelected;
         }
 
-        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = e.SelectedItem as AdminCommentsPageFlyoutMenuItem;
             if (item == null)
                 return;
 
-            var page = (Page)Activator.CreateInstance(item.TargetType);
-            page.Title = item.Title;
-
-            Detail = new NavigationPage(page);
-            IsPresented = false;
-
-            FlyoutPage.ListView.SelectedItem = null;
+            if (item.Title == "Пользователи")
+            {
+                await Navigation.PushModalAsync(new AdminUsersPage());
+            }
+            else if (item.Title == "Приложения")
+            {
+                await Navigation.PushModalAsync(new AdminAppsPage());
+            }
+            else if (item.Title == "Комментарии")
+            {
+                return;
+            }
         }
     }
 }

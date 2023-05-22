@@ -24,22 +24,26 @@ namespace Пароид.Views
             if (item == null)
                 return;
 
-            if(item.Title == "Желаемое")
+            if (item.Title == "Магазин")
             {
-                await Navigation.PushModalAsync(new WantedPage());
+                return;
             }
-            else if(item.Title == "Библиотека")
+            else if (item.Title == "Библиотека")
             {
                 await Navigation.PushModalAsync(new LibraryPage());
             }
-            else if(item.Title == "Стать разработчиком")
+            else if (item.Title == "Желаемое")
             {
-                await Navigation.PushModalAsync(new BecomeDeveloperPage());
+                await Navigation.PushModalAsync(new WantedPage());
             }
-            //Detail = new NavigationPage(page);
-            //IsPresented = false;
-
-            FlyoutPage.ListView.SelectedItem = null;
+            else if (item.Title == "Профиль")
+            {
+                await Navigation.PushModalAsync(new ProfilePage());
+            }
+            else if (item.Title == "Пополнить счет")
+            {
+                await Navigation.PushModalAsync(new AccountReplenishmentPage());
+            }
         }
     }
 }

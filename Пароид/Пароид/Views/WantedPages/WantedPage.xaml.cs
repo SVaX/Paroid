@@ -18,19 +18,32 @@ namespace Пароид.Views
             FlyoutPage.ListView.ItemSelected += ListView_ItemSelected;
         }
 
-        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = e.SelectedItem as WantedPageFlyoutMenuItem;
             if (item == null)
                 return;
 
-            var page = (Page)Activator.CreateInstance(item.TargetType);
-            page.Title = item.Title;
-
-            Detail = new NavigationPage(page);
-            IsPresented = false;
-
-            FlyoutPage.ListView.SelectedItem = null;
+            if (item.Title == "Магазин")
+            {
+                await Navigation.PushModalAsync(new MainMenuPage());
+            }
+            else if (item.Title == "Библиотека")
+            {
+                await Navigation.PushModalAsync(new LibraryPage());
+            }
+            else if (item.Title == "Желаемое")
+            {
+                return;
+            }
+            else if (item.Title == "Профиль")
+            {
+                await Navigation.PushModalAsync(new ProfilePage());
+            }
+            else if (item.Title == "Пополнить счет")
+            {
+                await Navigation.PushModalAsync(new AccountReplenishmentPage());
+            }
         }
     }
 }

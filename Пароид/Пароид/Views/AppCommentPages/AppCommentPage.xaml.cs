@@ -18,6 +18,8 @@ namespace Пароид.Views
         {
             InitializeComponent();
 
+            this.Title = "AppName";
+
             Items = new ObservableCollection<string>
             {
                 "Item 1",
