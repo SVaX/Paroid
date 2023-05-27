@@ -4,7 +4,7 @@
              x:Class="Пароид.Views.MainMenuPage"
              xmlns:pages="clr-namespace:Пароид.Views">
   <FlyoutPage.Flyout>
-    <pages:MainMenuPageFlyout x:Name="FlyoutPage" />
+    <pages:MainMenuPageFlyout x:Name="FlyoutPage"/>
   </FlyoutPage.Flyout>
   <FlyoutPage.Detail>
     <NavigationPage>

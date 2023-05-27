@@ -6,9 +6,12 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-
+using Пароид.Models;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 using Xamarin.Forms.Xaml;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace Пароид.Views
 {
@@ -16,14 +19,41 @@ namespace Пароид.Views
     public partial class MainMenuPageFlyout : ContentPage
     {
         public ListView ListView;
-
+        User _currentUser = new User();
+        
         public MainMenuPageFlyout()
         {
             InitializeComponent();
-
             BindingContext = new MainMenuPageFlyoutViewModel();
             ListView = MenuItemsListView;
-            usernameLabel.Text = "UserName";
+            GetUserName();
+            
+        }
+
+        private async void GetUserName()
+        {
+            var httpClientHandler = new HttpClientHandler()
+            {
+                UseDefaultCredentials = true
+            };
+            httpClientHandler.ServerCertificateCustomValidationCallback = (senderv, cert, chain, sslPolicyErrors) => { return true; };
+            var requestUri = "https://192.168.1.69:7184/api/Users";
+
+            using (var httpClient = new HttpClient(httpClientHandler))
+            {
+                var getResponse = httpClient.GetAsync(requestUri);
+                var result = await getResponse.Result.Content.ReadAsStringAsync();
+                List<User> usersList = JsonConvert.DeserializeObject<List<User>>(result);
+                var userExists = false;
+                foreach (var user in usersList)
+                {
+                    if (user.Login == Preferences.Get("_currentUserName", "default_value"))
+                    {
+                        _currentUser = user;
+                    }
+                }
+                usernameLabel.Text = _currentUser.Login;
+            }
         }
 
         private class MainMenuPageFlyoutViewModel : INotifyPropertyChanged

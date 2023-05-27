@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Пароид.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -55,7 +55,7 @@ namespace Пароид.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new MainMenuPage());
+            await Navigation.PushModalAsync(new MainMenuPage(new User()));
         }
     }
 }

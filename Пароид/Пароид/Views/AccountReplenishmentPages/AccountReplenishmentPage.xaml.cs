@@ -26,7 +26,7 @@ namespace Пароид.Views
 
             if (item.Title == "Магазин")
             {
-                await Navigation.PushModalAsync(new MainMenuPage());
+                await Navigation.PushModalAsync(new MainMenuPage(new Models.User()));
             }
             else if (item.Title == "Библиотека")
             {

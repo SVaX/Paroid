@@ -14,8 +14,8 @@ namespace DatabaseWebService.Controllers
             return await db.Users.ToListAsync();
         }
 
-        [HttpGet("{UsersId}")]
-        public async Task<ActionResult<IEnumerable<User>>> GetUsers(int id)
+        [HttpGet("GetUser")]
+        public async Task<ActionResult<IEnumerable<User>>> GetUser(int id)
         {
             var user = await db.Users.FirstOrDefaultAsync(x => x.UserId == id);
             if (user == null)
@@ -25,8 +25,21 @@ namespace DatabaseWebService.Controllers
             return new ObjectResult(user);
         }
 
+        [HttpGet("DoesUserExist")]
+        public async Task<ActionResult<bool>> UserAlreadyExists(string username)
+        {
+            foreach (var user in db.Users)
+            {
+                if (user.Login == username)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         [HttpPost]
-        public async Task<ActionResult<bool>> AddUser(User user)
+        public async Task<ActionResult<bool>> AddUser([FromBody]User user)
         {
             db.Users.Add(user);
             try
@@ -59,11 +72,6 @@ namespace DatabaseWebService.Controllers
         [HttpPut("{idUser}")]
         public async Task<ActionResult<bool>> UpdateUser(int id, User user)
         {
-            if (id != user.UserId)
-            {
-                return BadRequest();
-            }
-
             db.Entry(user).State = EntityState.Modified;
 
             try

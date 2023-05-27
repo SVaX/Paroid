@@ -6,7 +6,10 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Net.Http;
+using Пароид.Models;
 using Пароид.ViewModels;
+using Newtonsoft.Json;
 
 namespace Пароид.Views
 {
@@ -22,7 +25,51 @@ namespace Пароид.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new MainMenuPage());
+            var login = loginTextBox.Text;
+            var password = passwordTextBox.Text;
+
+            var httpClientHandler = new HttpClientHandler()
+            {
+                UseDefaultCredentials = true
+            };
+            httpClientHandler.ServerCertificateCustomValidationCallback = (senderv, cert, chain, sslPolicyErrors) => { return true; };
+            var requestUri = "https://192.168.1.69:7184/api/Users";
+
+            using (var httpClient = new HttpClient(httpClientHandler))
+            {
+                var getResponse = httpClient.GetAsync(requestUri);
+                var result = await getResponse.Result.Content.ReadAsStringAsync();
+                List<User> usersList = JsonConvert.DeserializeObject<List<User>>(result);
+                var userExists = false;
+                foreach (var user in usersList)
+                {
+                    if (user.Login == login)
+                    {
+                        if (user.Password == password)
+                        {
+                            if (user.PermissionLevel != "Admin")
+                            {
+                                await Navigation.PushModalAsync(new MainMenuPage(user));
+                            }
+                        }
+                        else
+                        {
+                            userExists = true;
+                            await DisplayAlert("Неверный пароль!", "Введенный пароль был неверным", "ok");
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        userExists = false;
+                    }
+                }
+                if (userExists)
+                {
+                    await DisplayAlert("Неверный логин!", "Введенный логин был неверным!", "ok");
+                    return;
+                }
+            }
         } 
 
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)

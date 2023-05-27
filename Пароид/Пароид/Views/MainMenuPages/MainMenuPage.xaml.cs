@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Пароид.Models;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 using Xamarin.Forms.Xaml;
 
 namespace Пароид.Views
@@ -12,10 +13,13 @@ namespace Пароид.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainMenuPage : FlyoutPage
     {
-        public MainMenuPage()
+        User _currentUser = new User();
+        public MainMenuPage(User user)
         {
             InitializeComponent();
             FlyoutPage.ListView.ItemSelected += ListView_ItemSelected;
+            Preferences.Set("_currentUserName", user.Login);
+            _currentUser = user;
         }
 
         private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

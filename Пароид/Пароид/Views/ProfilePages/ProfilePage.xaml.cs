@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Пароид.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -26,7 +26,7 @@ namespace Пароид.Views
 
             if (item.Title == "Магазин")
             {
-                await Navigation.PushModalAsync(new MainMenuPage());
+                await Navigation.PushModalAsync(new MainMenuPage(new User()));
             }
             else if (item.Title == "Библиотека")
             {
