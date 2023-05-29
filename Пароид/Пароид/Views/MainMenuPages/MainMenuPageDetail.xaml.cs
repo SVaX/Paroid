@@ -3,23 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using models = Пароид.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using System.Data.SqlClient;
+using Xamarin.Essentials;
+using Пароид.Models;
+using System.Collections.ObjectModel;
+using Application = Пароид.Models.Application;
 
 namespace Пароид.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainMenuPageDetail : ContentPage
     {
-        List<models.Application> apps = new List<models.Application>();
+        List<Application> apps = new List<Application>();
         public MainMenuPageDetail()
         {
             InitializeComponent();
+            welcomeLabel.Text = "Добро пожаловать, " + Preferences.Get("_currentUserName", "default_value");
             getApps();
         }
 
@@ -30,51 +34,50 @@ namespace Пароид.Views
 
         private async void getApps()
         {
-            //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-U9I41QJ\SQLEXPRESS;Initial Catalog=Diplom;Trusted_Connection = True");
-            //conn.Open();
-            //SqlCommand command = new SqlCommand("Select * from [Application]", conn);
-            //using (SqlDataReader reader = command.ExecuteReader())
-            //{
-            //    if (reader.Read())
-            //    {
-            //        var smth = reader[0];
-            //    }
-            //}
-            //conn.Close();
-
-            var httpClientHandler = new HttpClientHandler()
+            string connectionString = "Data Source=192.168.1.69\\SQLEXPRESS;Initial Catalog=Diplom; User=sa; Password = 123; Trusted_Connection = False";
+            string databaseTable = "Application";
+            string selectQuery = String.Format("SELECT * FROM {0}", databaseTable);
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                UseDefaultCredentials = true
-            };
-            httpClientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
-            var requestUri = "https://192.168.1.69:7184/api/Apps";
+                //open connection
+                connection.Open();
 
-            using (var httpClient = new HttpClient(httpClientHandler))
-            {
-                var response = await httpClient.GetAsync(requestUri);
+                SqlCommand command = new SqlCommand(selectQuery, connection);
 
-                if (response.IsSuccessStatusCode)
+                command.Connection = connection;
+                command.CommandText = selectQuery;
+                var result = command.ExecuteReader();
+                //check if account exists
+                var exists = result.HasRows;
+                var i = 0;
+                var appList = new Application[2];
+                while (result.Read())
                 {
-                    var json = await response.Content.ReadAsStringAsync();
-                    //var app = new models.Application();
-                    //app = JsonConvert.DeserializeObject<models.Application>(json);
+                    var app = new Application();
+                    app.AppId = int.Parse(result[0].ToString());
+                    app.Name = result[1].ToString();
+                    app.Picture = Encoding.UTF8.GetBytes(result[2].ToString());
+                    app.Description = result[3].ToString();
+                    app.File = Encoding.ASCII.GetBytes(result[4].ToString());
+                    app.Rating = int.Parse(result[5].ToString());
+                    app.Cost = int.Parse(result[6].ToString());
+                    apps.Add(app);
+                    var randomList = new List<int>() { 3 };
+                    appList[i] = app;
+                    
+                    i++;
                 }
-            }
-            //HttpClient client = new HttpClient();
-            //client.BaseAddress = new Uri("https://192.168.1.69:7184");
-            //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            //try
-            //{
-            //    HttpResponseMessage response = client.GetAsync("/api/Apps").Result;
-            //    if (response.IsSuccessStatusCode)
-            //    {
-            //        apps = JsonConvert.DeserializeObject<models.Application[]>(response.Content.ReadAsStringAsync().Result).ToList();
-            //    }
-            //}
-            //catch
-            //{
+                var list = appList.ToList();
 
-            //}
+                appsList.ItemsSource = appList.ToList();
+            }
+
+
+        }
+
+        private async void Желаемое_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new CartPage());
         }
     }
 }

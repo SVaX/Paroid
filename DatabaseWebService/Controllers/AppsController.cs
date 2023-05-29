@@ -14,9 +14,9 @@ namespace DatabaseWebService.Controllers
     {
         DiplomContext db = new DiplomContext();
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Application>>> GetApps()
+        public List<Application> GetApps()
         {
-            return await db.Applications.ToListAsync();
+            return db.Applications.ToList();
         }
 
         [HttpGet("{AppId}")]

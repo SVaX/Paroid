@@ -18,7 +18,7 @@
             </Style>
 
             <Color x:Key="primary-back-title-color">#303030</Color>
-            <Color x:Key="primary-title-color">#303030</Color>
+            <Color x:Key="primary-title-color">#FFFFFF</Color>
 
             <Style ApplyToDerivedTypes="true" TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource Key=primary-back-title-color}"/>

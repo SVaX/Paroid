@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Пароид.Views.MainMenuPageFlyout"
              Title="Flyout">
-  <StackLayout>
+    <StackLayout BackgroundColor="#1b2838">
     <ListView x:Name="MenuItemsListView"
               SeparatorVisibility="None"
               HasUnevenRows="true"

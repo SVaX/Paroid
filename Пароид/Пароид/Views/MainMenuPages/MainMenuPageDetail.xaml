@@ -2,20 +2,45 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 x:Class="Пароид.Views.MainMenuPageDetail"
+             xmlns:converter="clr-namespace:Пароид.Models"
 			 Title="Главное меню"
 			 BackgroundColor="#1B2838">
-	<StackLayout Padding="10">
-		<Label Text="Добро пожаловать, username"/>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:MyByteToImageSourceConverter x:Key="imageConverter"/>
+            <Image x:Key="nullImage" Source="https://aka.ms/campus.jpg"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="welcomeLabel" Grid.Column="0" Margin="10, 5, 10, 5" HeightRequest="50" LineBreakMode="WordWrap"/>
+            <Button x:Name="Желаемое" Text="Корзина" Grid.Column="1" Clicked="Желаемое_Clicked"/>
+        </Grid>
         <ListView x:Name="appsList" HasUnevenRows="True" ItemTapped="appsList_ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <ViewCell.View>
-                            <StackLayout>
-                                <Label Text="{Binding AppName}"/>
-                                <Image Source=""/>
-                            </StackLayout>
-                        </ViewCell.View>
+                        <Frame BorderColor="White" HasShadow="False" BackgroundColor="#1b2838">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1.5*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" x:Name="image" Source="https://aka.ms/campus.jpg" HeightRequest="50" WidthRequest="100"/>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Label Text="{Binding Name}" Grid.Row="0" TextDecorations="Underline" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Description}" Grid.Row="1" MaxLines="3"/>
+                                </Grid>
+                            </Grid>
+                        </Frame>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
