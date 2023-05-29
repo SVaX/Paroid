@@ -4,7 +4,7 @@
 
 Вход в аккаунт - Authorization Screen - LoginPage.xaml - СДЕЛАН
 
-Магазин - Shop page - MainMenuPageDetail.xaml - НАДА
+Магазин - Shop page - MainMenuPageDetail.xaml - СДЕЛАН
 
 Желаемое - Wanted Page - WantedPageDetail.xaml - НАДА
 
