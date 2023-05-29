@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +15,7 @@ namespace Пароид.Views
         public GameInfoPageDetail()
         {
             InitializeComponent();
+            this.Title = Preferences.Get("selectedAppName", "App");
         }
     }
 }

@@ -2,9 +2,61 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Пароид.Views.GameInfoPageDetail"
-             Title="Detail">
-  <StackLayout Padding="10">
-      
-    <Label Text="This is a detail page. To get the 'triple' line icon on each platform add a icon to each platform and update the 'Flyout' page with an Icon that references it."/>
-  </StackLayout>
+             Title=""
+             BackgroundColor="#1B2838">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Image x:Key="nullImage" Source="https://aka.ms/campus.jpg"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="appImage" Source="https://aka.ms/campus.jpg" HorizontalOptions="Center" VerticalOptions="Center" Grid.RowSpan="2" Grid.Column="0"/>
+                <Label x:Name="appName" Text="dota2" FontAttributes="Bold" Grid.Column="1" Grid.Row="1"/>
+                <Label x:Name="ratingLabel" Text="rating" FontAttributes="Bold" Grid.Column="1" Grid.Row="2"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Frame BorderColor="Black" BackgroundColor="#1D334E">
+                    <Editor x:Name="descriptionText" IsReadOnly="True"/>
+                </Frame>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" Text="Отзывы" HeightRequest="50" x:Name="commentsButton"/>
+                <Button Grid.Row="1" Grid.Column="0" Text="Добавить в корзину" HeightRequest="50" x:Name="cartButton"/>
+                <Button Grid.Row="2" Grid.Column="0" Text="В желаемое" HeightRequest="50" x:Name="wantedButton"/>
+                <Frame BorderColor="Black" BackgroundColor="#1d334e" Grid.RowSpan="3" Grid.Column="1">
+                    <Editor x:Name="costEditor" IsReadOnly="True"/>
+                </Frame>
+            </Grid>
+            <Image Source="https://aka.ms/campus.jpg" Grid.Row="3" Margin="25, 10, 25, 10"/>
+            <Image Source="https://aka.ms/campus.jpg" Grid.Row="4" Margin="25, 10, 25, 10"/>
+            <Image Source="https://aka.ms/campus.jpg" Grid.Row="5" Margin="25, 10, 25, 10"/>
+        </Grid>
+    </StackLayout>
 </ContentPage>

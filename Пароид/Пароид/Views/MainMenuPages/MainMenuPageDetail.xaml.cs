@@ -27,9 +27,11 @@ namespace Пароид.Views
             getApps();
         }
 
-        private void appsList_ItemTapped(object sender, ItemTappedEventArgs e)
+        private async void appsList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-
+            var app = e.Item as Application;
+            Preferences.Set("selectedAppName", app.Name);
+            await Navigation.PushModalAsync(new GameInfoPage());
         }
 
         private async void getApps()
