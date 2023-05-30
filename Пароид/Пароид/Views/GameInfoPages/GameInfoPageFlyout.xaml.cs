@@ -6,8 +6,9 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-
+using Пароид.Models;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 using Xamarin.Forms.Xaml;
 
 namespace Пароид.Views
@@ -23,6 +24,7 @@ namespace Пароид.Views
 
             BindingContext = new GameInfoPageFlyoutViewModel();
             ListView = MenuItemsListView;
+            usernameLabel.Text = Preferences.Get("_currentUserName", "unknown");
         }
 
         private class GameInfoPageFlyoutViewModel : INotifyPropertyChanged

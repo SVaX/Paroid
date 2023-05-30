@@ -29,8 +29,8 @@
                     <ColumnDefinition Width="1.5*"/>
                 </Grid.ColumnDefinitions>
                 <Image x:Name="appImage" Source="https://aka.ms/campus.jpg" HorizontalOptions="Center" VerticalOptions="Center" Grid.RowSpan="2" Grid.Column="0"/>
-                <Label x:Name="appName" Text="dota2" FontAttributes="Bold" Grid.Column="1" Grid.Row="1"/>
-                <Label x:Name="ratingLabel" Text="rating" FontAttributes="Bold" Grid.Column="1" Grid.Row="2"/>
+                <Label x:Name="appName" FontAttributes="Bold" Grid.Column="1" Grid.Row="1"/>
+                <Label x:Name="ratingLabel" FontAttributes="Bold" Grid.Column="1" Grid.Row="2"/>
             </Grid>
             <Grid Grid.Row="1">
                 <Frame BorderColor="Black" BackgroundColor="#1D334E">
@@ -47,9 +47,9 @@
                     <ColumnDefinition Width="1.5*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Row="0" Grid.Column="0" Text="Отзывы" HeightRequest="50" x:Name="commentsButton"/>
-                <Button Grid.Row="1" Grid.Column="0" Text="Добавить в корзину" HeightRequest="50" x:Name="cartButton"/>
-                <Button Grid.Row="2" Grid.Column="0" Text="В желаемое" HeightRequest="50" x:Name="wantedButton"/>
+                <Button Grid.Row="0" Grid.Column="0" Text="Отзывы" HeightRequest="50" x:Name="commentsButton" Clicked="commentsButton_Clicked"/>
+                <Button Grid.Row="1" Grid.Column="0" Text="Уже в корзине" HeightRequest="50" x:Name="cartButton" Clicked="cartButton_Clicked" IsEnabled="False"/>
+                <Button Grid.Row="2" Grid.Column="0" Text="Уже в желаемом" HeightRequest="50" x:Name="wantedButton" Clicked="wantedButton_Clicked" IsEnabled="False"/>
                 <Frame BorderColor="Black" BackgroundColor="#1d334e" Grid.RowSpan="3" Grid.Column="1">
                     <Editor x:Name="costEditor" IsReadOnly="True"/>
                 </Frame>

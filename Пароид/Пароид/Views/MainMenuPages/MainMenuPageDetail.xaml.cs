@@ -31,6 +31,7 @@ namespace Пароид.Views
         {
             var app = e.Item as Application;
             Preferences.Set("selectedAppName", app.Name);
+            Preferences.Set("selectedAppId", app.AppId.ToString());
             await Navigation.PushModalAsync(new GameInfoPage());
         }
 

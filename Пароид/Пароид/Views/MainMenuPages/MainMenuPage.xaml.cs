@@ -19,6 +19,7 @@ namespace Пароид.Views
             InitializeComponent();
             FlyoutPage.ListView.ItemSelected += ListView_ItemSelected;
             Preferences.Set("_currentUserName", user.Login);
+            Preferences.Set("currentUserId", user.UserId.ToString());
             _currentUser = user;
         }
 
