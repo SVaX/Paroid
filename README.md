@@ -10,7 +10,7 @@
 
 Об игре - App Page - GameInfoPageDetail.xaml - СДЕЛАН
 
-Стать разработчиком - Developer Screen - BecomeDeveloperPage.xaml - НАДА
+Стать разработчиком - Developer Screen - BecomeDeveloperPage.xaml - СДЕЛАН
 
 Регистрация - Registration Screen - RegistrationPage.xaml - СДЕЛАН
 
