@@ -8,9 +8,9 @@
 
 Желаемое - Wanted Page - WantedPageDetail.xaml - НАДА
 
-Об игре - App Page - GameInfoPageDetail.xaml - НАДА
+Об игре - App Page - GameInfoPageDetail.xaml - СДЕЛАН
 
-Стать разработчиком - Developer Screen - BecomeDeveloperPage.xaml - СДЕЛАН
+Стать разработчиком - Developer Screen - BecomeDeveloperPage.xaml - НАДА
 
 Регистрация - Registration Screen - RegistrationPage.xaml - СДЕЛАН
 
