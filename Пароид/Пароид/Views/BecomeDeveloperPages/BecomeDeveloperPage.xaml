@@ -30,9 +30,9 @@
                         <Editor  x:Name="emailTextBox" Grid.Row="2"/>
                     </Frame>
                     
-                    <Label Text="Код подтверждения" FontSize="20" Grid.Row="3" IsVisible="true" x:Name="codeLabel" />
-                    <Frame  Grid.Row="4" StyleClass="EditorFrame" IsVisible="false">
-                        <Editor  x:Name="codeTextBox"/>
+                    <Label Text="Код подтверждения" FontSize="20" Grid.Row="3" IsVisible="false" x:Name="codeLabel" />
+                    <Frame  Grid.Row="4" StyleClass="EditorFrame" IsVisible="false" x:Name="codeFrame" >
+                        <Editor x:Name="codeTextBox"/>
                     </Frame>
                     <!--#endregion -->
                     <Button x:Name="sendCodeTextBox" Pressed="sendCodeTextBox_Pressed" IsEnabled="True" Grid.Row="5" Text="Отправить код" Margin="30,0,0,0"/>

@@ -14,12 +14,15 @@ namespace Пароид.Views
     public partial class MainMenuPage : FlyoutPage
     {
         User _currentUser = new User();
-        public MainMenuPage(User user)
+        public MainMenuPage(User user = null)
         {
             InitializeComponent();
             FlyoutPage.ListView.ItemSelected += ListView_ItemSelected;
-            Preferences.Set("_currentUserName", user.Login);
-            Preferences.Set("currentUserId", user.UserId.ToString());
+            if (user != null)
+            {
+                Preferences.Set("_currentUserName", user.Login);
+                Preferences.Set("currentUserId", user.UserId.ToString());
+            }
             _currentUser = user;
         }
 
