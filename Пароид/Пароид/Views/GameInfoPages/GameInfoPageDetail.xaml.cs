@@ -17,6 +17,7 @@ namespace Пароид.Views
     {
         List<Cart> _carts = new List<Cart>();
         List<Wanted> _wanteds = new List<Wanted>();
+        List<Library> _libraries = new List<Library>();
         public GameInfoPageDetail()
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace Пароид.Views
             costEditor.Text = "Цена: " + app.Cost.ToString();
             getCarts();
             getWanted();
+            getLibraries();
             if (_carts.Count == 0)
             {
                 cartButton.IsEnabled = true;
@@ -37,6 +39,13 @@ namespace Пароид.Views
             {
                 wantedButton.IsEnabled = true;
                 wantedButton.Text = "В желаемое";
+            }
+            if (_libraries.Count != 0)
+            {
+                cartButton.IsEnabled = false;
+                cartButton.Text = "Уже приобретено!";
+                wantedButton.IsEnabled = false;
+                wantedButton.Text = "Уже приобретено!";
             }
         }
 
@@ -67,6 +76,37 @@ namespace Пароид.Views
                     carts.Add(cart);
                 }
                 _carts = carts;
+            }
+
+        }
+
+        private void getLibraries()
+        {
+            string connectionString = "Data Source=192.168.1.69\\SQLEXPRESS;Initial Catalog=Diplom; User=sa; Password = 123; Trusted_Connection = False";
+            string databaseTable = "Library";
+            string selectQuery = String.Format("SELECT * FROM {0} WHERE Id_App= {1} AND Id_User = {2}", databaseTable, int.Parse(Preferences.Get("selectedAppId", "0")), int.Parse(Preferences.Get("currentUserId", "0")));
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                //open connection
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(selectQuery, connection);
+
+                command.Connection = connection;
+                command.CommandText = selectQuery;
+                var result = command.ExecuteReader();
+                //check if account exists
+                var exists = result.HasRows;
+                var libs = new List<Library>();
+                while (result.Read())
+                {
+                    var library = new Library();
+                    library.LibraryId = int.Parse(result[0].ToString());
+                    library.IdUser = int.Parse(result[1].ToString());
+                    library.IdApp = int.Parse(result[2].ToString());
+                    libs.Add(library);
+                }
+                _libraries = libs;
             }
 
         }
