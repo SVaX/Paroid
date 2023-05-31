@@ -2,8 +2,43 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Пароид.Views.AppCommentPage"
-             >
-    <StackLayout Padding="0,0,0,0">
-        
+             BackgroundColor="#1B2838">
+    <StackLayout >
+        <Grid BackgroundColor="#303030" HeightRequest="60">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="back.png" VerticalOptions="Center" HorizontalOptions="StartAndExpand" Grid.Column="0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="backButton" Tapped="backButton_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label x:Name="Title" VerticalOptions="Center" HorizontalOptions="Center"/>
+        </Grid>
+        <Grid HeightRequest="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Label Text= "Ваш комментарий: "/>
+                <Editor BackgroundColor="#3D3D3D"  x:Name="commentTextBox" Grid.Row="1" Margin="20,5,0,0" Placeholder="Ваш комментарий тут" HeightRequest="150"  AutoSize="TextChanges"/>
+            </Grid>
+            <Grid Grid.Column="1" HorizontalOptions="End">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Frame CornerRadius="30" BackgroundColor="#3D3d3d" >
+                    <Editor x:Name="ratingTextBox" TextChanged="ratingTextBox_TextChanged" MaxLength="1"/>
+                </Frame>
+                <Button x:Name="confirmButton" BackgroundColor="#3D3d3d" Clicked="confirmButton_Tapped" Text="ОК" Grid.Row="1"/>
+            </Grid>
+        </Grid>
     </StackLayout>
 </ContentPage>

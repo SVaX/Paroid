@@ -6,56 +6,38 @@ using System.Threading.Tasks;
 using Пароид.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace Пароид.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AppCommentPage : ContentPage
     {
-        public ObservableCollection<string> Items { get; set; }
 
         public AppCommentPage()
         {
             InitializeComponent();
-
-            this.Title = "AppName";
-
-            Items = new ObservableCollection<string>
-            {
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                "Item 4",
-                "Item 5"
-            };
-
-            //MyListView.ItemsSource = Items;
+            Title.Text = "Комментарии для " + Preferences.Get("selectedAppName", "defaultValue");
         }
 
-        async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            if (e.Item == null)
-                return;
-
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
-
-            //Deselect Item
-            ((ListView)sender).SelectedItem = null;
-        }
-
-        private async void ImageButton_Clicked(object sender, EventArgs e)
+        private async void backButton_Tapped(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new GameInfoPage());
         }
 
-        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        private void confirmButton_Tapped(object sender, EventArgs e)
         {
-           await Navigation.PushModalAsync(new GameInfoPage());
+
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private void ratingComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new MainMenuPage(new User()));
+
+        }
+
+        private void ratingTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
