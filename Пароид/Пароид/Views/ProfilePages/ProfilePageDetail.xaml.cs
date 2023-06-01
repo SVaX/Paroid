@@ -42,7 +42,7 @@ namespace Пароид.Views
             }
             else
             {
-                addToFriendsButton.IsVisible = friendshipExist();
+                addToFriendsButton.IsVisible = !friendshipExist();
                 descriptionText.IsReadOnly = true;
                 saveDescription.IsVisible = false;
                 becomeDeveloperButton.IsVisible = false;

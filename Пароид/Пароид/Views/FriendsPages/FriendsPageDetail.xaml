@@ -10,6 +10,9 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <StackLayout>
+        <Grid HeightRequest="60" WidthRequest="400" HorizontalOptions="CenterAndExpand" VerticalOptions="Start">
+            <Button Text="Запросы в друзья" x:Name="friendRequestButton" HeightRequest="100" WidthRequest="400" HorizontalOptions="CenterAndExpand"  Clicked="friendRequestButton_Clicked"/>
+        </Grid>
         <ListView x:Name="friendsList" HasUnevenRows="True" ItemTapped="friendsList_ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>

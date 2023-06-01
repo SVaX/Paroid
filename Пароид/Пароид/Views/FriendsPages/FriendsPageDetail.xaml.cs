@@ -166,5 +166,10 @@ namespace Пароид.Views
                 }
             }
         }
+
+        private async void friendRequestButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new FriendsRequestPage());
+        }
     }
 }
