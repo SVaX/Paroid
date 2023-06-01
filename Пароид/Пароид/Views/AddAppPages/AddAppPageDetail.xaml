@@ -2,8 +2,44 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Пароид.Views.AddAppPageDetail"
-             Title="Detail">
-  <StackLayout Padding="10">
-    <Label Text="This is a detail page. To get the 'triple' line icon on each platform add a icon to each platform and update the 'Flyout' page with an Icon that references it."/>
-  </StackLayout>
+             Title="Добавление приложения"
+             BackgroundColor="#1b2838">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand">
+            <!--#region Лого + фрейм основной-->
+
+            <RelativeLayout>
+                <Frame BackgroundColor="#2a475e" Padding="-1" BorderColor="#1f384d" HeightRequest="600" WidthRequest="375" Margin="10, 0, 10, 5" HorizontalOptions="Fill"/>
+                <!--#endregion-->
+                <StackLayout Margin="0, 0, 0, 0">
+                    <!--#region Текстбоксы-->
+                    <Label Text="Название" TextColor="White"/>
+                    <Frame StyleClass="EditorFrame">
+                        <Entry x:Name="nameTextBox" Placeholder="Название" WidthRequest="300" PlaceholderColor="#424fc2" TextColor="#424fc2"/>
+                    </Frame>
+
+                    <Label Text="Описание" TextColor="White" FontSize="18" WidthRequest="300" FontFamily="Galindo" Margin="30, 1, 0, 0"/>
+                    <Frame StyleClass="EditorFrame" HeightRequest="200" WidthRequest="300">
+                        <Editor x:Name="emailTextBox" HeightRequest="200" Placeholder="Описание" PlaceholderColor="#424fc2" TextColor="#424fc2"/>
+                    </Frame>
+
+                    <Label Text="Аватар приложения (название)" TextColor="White" WidthRequest="300"/>
+                    <Frame StyleClass="EditorFrame" WidthRequest="300">
+                        <Entry  x:Name="imageTextBox" Placeholder="Название картинки" PlaceholderColor="#424fc2" TextColor="#424fc2"/>
+                    </Frame>
+
+                    <Label Text="Файл установщика если приложение уже есть" WidthRequest="300" TextColor="White" FontSize="18" FontFamily="Galindo" Margin="30, 1, 0, 0"/>
+                    <Frame StyleClass="EditorFrame" WidthRequest="300">
+                        <Entry  x:Name="installerTextBox" Placeholder="Файл установщика" PlaceholderColor="#424fc2" TextColor="#424fc2"/>
+                    </Frame>
+
+                    <Label Text="Цена:" TextColor="White" WidthRequest="300" FontSize="18" FontFamily="Galindo" Margin="30, 1, 0, 0"/>
+                    <Frame StyleClass="EditorFrame" WidthRequest="300">
+                        <Entry  x:Name="priceTextBox" Placeholder="Цена" PlaceholderColor="#424fc2" TextColor="#424fc2" Keyboard="Numeric"/>
+                    </Frame>
+                    <Button Margin="25, 5, 10,0" Padding="-1" WidthRequest="150" HeightRequest="35" CornerRadius="10" HorizontalOptions="Start" x:Name="addButton" VerticalOptions="FillAndExpand" BackgroundColor="#32D717" Text="Загрузить" TextColor="#A6FF98" Clicked="addButton_Clicked"/>
+                </StackLayout>
+            </RelativeLayout>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

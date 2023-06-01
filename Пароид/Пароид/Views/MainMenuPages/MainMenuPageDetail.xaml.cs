@@ -52,8 +52,6 @@ namespace Пароид.Views
                 var result = command.ExecuteReader();
                 //check if account exists
                 var exists = result.HasRows;
-                var i = 0;
-                var appList = new Application[2];
                 while (result.Read())
                 {
                     var app = new Application();
@@ -65,14 +63,10 @@ namespace Пароид.Views
                     app.Rating = int.Parse(result[5].ToString());
                     app.Cost = int.Parse(result[6].ToString());
                     apps.Add(app);
-                    var randomList = new List<int>() { 3 };
-                    appList[i] = app;
                     
-                    i++;
                 }
-                var list = appList.ToList();
 
-                appsList.ItemsSource = appList.ToList();
+                appsList.ItemsSource = apps.ToList();
             }
 
 
