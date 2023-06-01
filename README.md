@@ -6,7 +6,7 @@
 
 Магазин - Shop page - MainMenuPageDetail.xaml - СДЕЛАН
 
-Желаемое - Wanted Page - WantedPageDetail.xaml - НАДА
+Желаемое - Wanted Page - WantedPageDetail.xaml - СДЕЛАН
 
 Об игре - App Page - GameInfoPageDetail.xaml - СДЕЛАН
 
@@ -16,9 +16,9 @@
 
 Восстановление пароля - Password Reminder Screen - PasswordReminderPage.xaml - СДЕЛАН
 
-Комментарии к приложению - App Comment Screen - AppCommentPage.xaml - НАДА
+Комментарии к приложению - App Comment Screen - AppCommentPage.xaml - 50\50
 
-Библиотека - Library Screen - LibraryPageDetail.xaml - НАДА
+Библиотека - Library Screen - LibraryPageDetail.xaml - СДЕЛАН
 
 Корзина - Cart - CartPageDetail.xaml - НАДА
 
