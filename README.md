@@ -24,7 +24,7 @@
 
 Оплата - Payment - PaymentPageDetail.xaml - НАДА
 
-Профиль - Profile - ProfilePageDetail.xaml - НАДА
+Профиль - Profile - ProfilePageDetail.xaml - СДЕЛАН
 
 Друзья - Friends Screen - FriendsPageDetail.xaml - НАДА
 
