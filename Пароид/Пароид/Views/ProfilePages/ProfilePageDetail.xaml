@@ -2,8 +2,59 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Пароид.Views.ProfilePageDetail"
-             Title="Detail">
-  <StackLayout Padding="10">
-    <Label Text="This is a detail page. To get the 'triple' line icon on each platform add a icon to each platform and update the 'Flyout' page with an Icon that references it."/>
-  </StackLayout>
+             Title="Профиль"
+              BackgroundColor="#1B2838">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Image x:Key="nullImage" Source="https://aka.ms/campus.jpg"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="userImage" Source="https://aka.ms/campus.jpg" HorizontalOptions="Center" VerticalOptions="Center" Grid.RowSpan="2" Grid.Column="0"/>
+                <Label x:Name="userName" FontAttributes="Bold" Grid.Column="1" Grid.Row="1"/>
+                <Editor x:Name="descriptionText" IsReadOnly="True" HeightRequest="150" FontAttributes="Bold" Grid.Column="1" Grid.Row="2"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="appsOwnedLabel"/>
+                <Label x:Name="regDateLabel" Grid.Column="1"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" Text="Добавить в друзья" HeightRequest="100" x:Name="addToFriendsButton" Clicked="addToFriendsButton_Clicked"/>
+                <Button Grid.Row="1" Grid.Column="0" Text="Список друзей" HeightRequest="100" x:Name="friendsList" Clicked="friendsList_Clicked"/>
+                <Button Grid.Row="2" Grid.Column="0" Text="Стать разработчиком" HeightRequest="100" x:Name="becomeDeveloperButton" Clicked="becomeDeveloperButton_Clicked"/>
+                <Button Grid.Row="3" Grid.Column="0" Text="Добавить приложение" HeightRequest="100" x:Name="addAppButton" Clicked="addAppButton_Clicked"/>
+                <Button Grid.RowSpan="2" Grid.Column="1" x:Name="saveDescription" IsVisible="false" HeightRequest="200" Clicked="saveDescription_Clicked" Text="Сохранить описание"/>
+            </Grid>
+        </Grid>
+    </StackLayout>
 </ContentPage>

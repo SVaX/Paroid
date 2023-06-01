@@ -22,6 +22,7 @@ namespace Пароид.Views
             {
                 Preferences.Set("_currentUserName", user.Login);
                 Preferences.Set("currentUserId", user.UserId.ToString());
+                Preferences.Set("selectedUserName", user.Login);
             }
             _currentUser = user;
         }
