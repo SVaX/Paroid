@@ -26,9 +26,9 @@
 
 Профиль - Profile - ProfilePageDetail.xaml - СДЕЛАН
 
-Друзья - Friends Screen - FriendsPageDetail.xaml - НАДА
+Друзья - Friends Screen - FriendsPageDetail.xaml - СДЕЛАН
 
-Запросы - Friends Request - FriendsRequestPageDetail.xaml - НАДА
+Запросы - Friends Request - FriendsRequestPageDetail.xaml - СДЕЛАН
 
 Пополнение счета - Account Replenishment - AccountReplenishmentPageDetail.xaml - НАДА
 
