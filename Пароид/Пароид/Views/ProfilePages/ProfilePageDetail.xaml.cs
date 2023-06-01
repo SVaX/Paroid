@@ -89,7 +89,7 @@ namespace Пароид.Views
         {
             string connectionString = "Data Source=192.168.1.69\\SQLEXPRESS;Initial Catalog=Diplom; User=sa; Password = 123; Trusted_Connection = False";
             string databaseTable = "Friendship";
-            string selectQuery = String.Format("SELECT * FROM {0} WHERE (Id_User1 = {1} OR Id_User2 = {1}) AND (Id_User1 = {2} OR Id_User2 = {2}", databaseTable, Preferences.Get("currentUserId", "0"), selectedUser.UserId.ToString());
+            string selectQuery = String.Format("SELECT * FROM {0} WHERE (Id_User1 = {1} OR Id_User2 = {1}) AND (Id_User1 = {2} OR Id_User2 = {2})", databaseTable, Preferences.Get("currentUserId", "0"), selectedUser.UserId.ToString());
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 //open connection
@@ -101,7 +101,8 @@ namespace Пароид.Views
                 command.CommandText = selectQuery;
                 var result = command.ExecuteReader();
                 //check if account exists
-                return result.HasRows;
+                bool exist = result.HasRows;
+                return exist;
             }
         }
 
@@ -153,11 +154,12 @@ namespace Пароид.Views
                     user.Email = result[5].ToString();
                     user.RegistrationDate = DateTime.Parse(result[6].ToString());
                     user.Description = result[7].ToString();
-
+                    Preferences.Set("selectedUserName", Preferences.Get("_currentUserName", "0"));
                     return user;
                 }
                 return null;
             }
+            
         }
 
         private User GetCurrentUser()
