@@ -24,7 +24,7 @@ namespace Пароид.Views
         {
             appsLib.Clear();
             string connectionString = "Data Source=192.168.1.69\\SQLEXPRESS;Initial Catalog=Diplom; User=sa; Password = 123; Trusted_Connection = False";
-            string databaseTable = "Comments";
+            string databaseTable = "Comment";
             string selectQuery = $"SELECT * FROM {databaseTable} WHERE IsReported = 1";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

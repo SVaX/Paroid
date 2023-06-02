@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Пароид.Views.AdminCommentsPageDetail"
-             Title="Detail">
+             Title="Комментарии"
+             BackgroundColor="#1B2838">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Image x:Key="nullImage" Source="https://aka.ms/campus.jpg"/>
@@ -19,7 +20,7 @@
                                     <ColumnDefinition Width="1*"/>
                                     <ColumnDefinition Width="1.5*"/>
                                 </Grid.ColumnDefinitions>
-                                <Grid Grid.Column="1">
+                                <Grid Grid.Column="0">
                                     <Grid.RowDefinitions>
                                         <RowDefinition/>
                                         <RowDefinition/>
