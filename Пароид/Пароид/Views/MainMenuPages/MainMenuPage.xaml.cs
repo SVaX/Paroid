@@ -18,12 +18,12 @@ namespace Пароид.Views
         {
             InitializeComponent();
             FlyoutPage.ListView.ItemSelected += ListView_ItemSelected;
-            if (user != null)
-            {
-                Preferences.Set("_currentUserName", user.Login);
-                Preferences.Set("currentUserId", user.UserId.ToString());
-                Preferences.Set("selectedUserName", user.Login);
-            }
+            //if (user != null)
+            //{
+            //    Preferences.Set("_currentUserName", user.Login);
+            //    Preferences.Set("currentUserId", user.UserId.ToString());
+            //    Preferences.Set("selectedUserName", user.Login);
+            //}
             _currentUser = user;
         }
 

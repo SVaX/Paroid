@@ -10,6 +10,7 @@ using System.Net.Http;
 using Пароид.Models;
 using Пароид.ViewModels;
 using Newtonsoft.Json;
+using Xamarin.Essentials;
 
 namespace Пароид.Views
 {
@@ -49,6 +50,9 @@ namespace Пароид.Views
                         {
                             if (user.PermissionLevel != "Admin")
                             {
+                                Preferences.Set("_currentUserName", user.Login);
+                                Preferences.Set("currentUserId", user.UserId.ToString());
+                                Preferences.Set("selectedUserName", user.Login);
                                 await Navigation.PushModalAsync(new MainMenuPage(user));
                             }
                         }
