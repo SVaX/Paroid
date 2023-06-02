@@ -22,8 +22,9 @@ namespace Пароид.Views
             getApps();
         }
 
-        private async void getApps()
+        private void getApps()
         {
+            appsLib.Clear();
             string connectionString = "Data Source=192.168.1.69\\SQLEXPRESS;Initial Catalog=Diplom; User=sa; Password = 123; Trusted_Connection = False";
             string databaseTable = "Application";
             string selectQuery = $"SELECT * FROM {databaseTable}";
@@ -53,18 +54,36 @@ namespace Пароид.Views
                     apps.Add(app);
                 }
 
-                appsList.ItemsSource = appsLib;
+                appsList.ItemsSource = apps;
             }
-        }
-
-        private void appsList_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-
         }
 
         private void deleteFromFriendsButton_Clicked(object sender, EventArgs e)
         {
+            Button btn = sender as Button;
+            // Find the single item here
+            Application product = btn.BindingContext as Application;
 
+            string connectionString = "Data Source=192.168.1.69\\SQLEXPRESS;Initial Catalog=Diplom; User=sa; Password = 123; Trusted_Connection = False";
+            string databaseTable = "[Application]";
+            string selectQuery = $"DELETE FROM {databaseTable} WHERE AppId = {product.AppId}";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                //open connection
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(selectQuery, connection);
+
+                command.Connection = connection;
+                command.CommandText = selectQuery;
+                var result = command.ExecuteReader();
+                //check if account exists
+                var exists = result.HasRows;
+                getApps();
+            }
+
+
+            DisplayAlert("Успешно", "Приложение удалено", "ОК");
         }
     }
 }

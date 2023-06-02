@@ -3,7 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Пароид.Views.AdminCommentsPageDetail"
              Title="Detail">
-  <StackLayout Padding="10">
-    <Label Text="This is a detail page. To get the 'triple' line icon on each platform add a icon to each platform and update the 'Flyout' page with an Icon that references it."/>
-  </StackLayout>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Image x:Key="nullImage" Source="https://aka.ms/campus.jpg"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout>
+        <ListView x:Name="appsList" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame BorderColor="White" HasShadow="False" BackgroundColor="#1b2838">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1.5*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Label Text="{Binding UserName}" Grid.Row="0" TextDecorations="Underline" FontAttributes="Bold"/>
+                                    <Label Text="{Binding CommentText}" Grid.Row="1" MaxLines="3"/>
+                                </Grid>
+                                <Button Grid.Column="2" Text="Удалить" x:Name="deleteFromFriendsButton"  Clicked="deleteFromFriendsButton_Clicked" />
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

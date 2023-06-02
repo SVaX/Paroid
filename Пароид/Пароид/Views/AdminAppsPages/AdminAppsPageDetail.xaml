@@ -10,7 +10,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <StackLayout>
-        <ListView x:Name="appsList" HasUnevenRows="True" ItemTapped="appsList_ItemTapped">
+        <ListView x:Name="appsList" HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

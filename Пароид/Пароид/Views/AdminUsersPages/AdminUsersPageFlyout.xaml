@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Пароид.Views.AdminUsersPageFlyout"
-             Title="Flyout">
-  <StackLayout>
+             Title="Flyout" >
+    <StackLayout BackgroundColor="#1b2838">
     <ListView x:Name="MenuItemsListView"
               SeparatorVisibility="None"
               HasUnevenRows="true"
@@ -24,7 +24,7 @@
           <Label
               Grid.Column="1"
               Grid.Row="2"
-              Text="AppName"
+              Text="Администратор"
               Style="{DynamicResource SubtitleStyle}"/>
         </Grid>
       </ListView.Header>
