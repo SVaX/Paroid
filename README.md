@@ -16,11 +16,11 @@
 
 Восстановление пароля - Password Reminder Screen - PasswordReminderPage.xaml - СДЕЛАН
 
-Комментарии к приложению - App Comment Screen - AppCommentPage.xaml - 50\50
+Комментарии к приложению - App Comment Screen - AppCommentPage.xaml - СДЕЛАН
 
 Библиотека - Library Screen - LibraryPageDetail.xaml - СДЕЛАН
 
-Корзина - Cart - CartPageDetail.xaml - НАДА
+Корзина - Cart - CartPageDetail.xaml - СДЕЛАН
 
 Оплата - Payment - PaymentPageDetail.xaml - НАДА
 
@@ -32,7 +32,7 @@
 
 Пополнение счета - Account Replenishment - AccountReplenishmentPageDetail.xaml - НАДА
 
-Добавить приложение - App Adding Screen - AddAppPageDetail.xaml - НАДА
+Добавить приложение - App Adding Screen - AddAppPageDetail.xaml - СДЕЛАН
 
 Админ пользователи - Admin Users Screen - AdminUsersPageDetail.xaml - НАДА
 
