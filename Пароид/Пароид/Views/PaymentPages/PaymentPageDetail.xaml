@@ -2,8 +2,51 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Пароид.Views.PaymentPageDetail"
-             Title="Detail">
-  <StackLayout Padding="10">
-    <Label Text="This is a detail page. To get the 'triple' line icon on each platform add a icon to each platform and update the 'Flyout' page with an Icon that references it."/>
-  </StackLayout>
+             Title="Оплата"
+             BackgroundColor="#1B2838">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Image x:Key="nullImage" Source="https://aka.ms/campus.jpg"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout>
+        <Frame BorderColor="Black" BackgroundColor="#1D334E">
+            <Label x:Name="overallTextBox"/>
+        </Frame>
+        <Frame BorderColor="Black" BackgroundColor="#1D334E">
+            <Label x:Name="onBalanceTextBox"/>
+        </Frame>
+        <RadioButton Content="Пополнить счет" x:Name="appR" CheckedChanged="RadioButton_CheckedChanged"/>
+        <RadioButton Content="Оплата картой" IsChecked="True" x:Name="cardR" CheckedChanged="RadioButton_CheckedChanged_1"/>
+
+        <Frame BorderColor="Black" BackgroundColor="#1D334E" x:Name="howMuchGrid">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Text="Сколько внести на счет"/>
+                <Entry x:Name="addTextBox" Keyboard="Numeric" MaxLength="5" Grid.Row="1"/>
+            </Grid>
+        </Frame>
+        <Grid x:Name="cardGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label  Text="Номер карты" Grid.ColumnSpan="2"/>
+            <Entry Keyboard="Numeric" MaxLength="16" x:Name="cardTextBox" Grid.ColumnSpan="2" Grid.Row="1"/>
+            <Label  Text="Срок действия" Grid.Column="0" Grid.Row="2"/>
+            <Entry Keyboard="Default" MaxLength="5" x:Name="dateTextBox" Grid.Column="0"  Grid.Row="3"/>
+            <Label  Text="CVC" Grid.Column="1" Grid.Row="2"/>
+            <Entry Keyboard="Numeric" MaxLength="3" x:Name="cvcTextBox" Grid.Column="1"  Grid.Row="3"/>
+        </Grid>
+        <Button Text="Оплатить" x:Name="payButton" Clicked="payButton_Clicked"/>
+    </StackLayout>
 </ContentPage>

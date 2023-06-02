@@ -6,7 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -23,6 +23,7 @@ namespace Пароид.Views
 
             BindingContext = new PaymentPageFlyoutViewModel();
             ListView = MenuItemsListView;
+            userNameLabel.Text = Preferences.Get("_currentUserName", "default_value");
         }
 
         private class PaymentPageFlyoutViewModel : INotifyPropertyChanged

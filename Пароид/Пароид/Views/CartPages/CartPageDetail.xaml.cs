@@ -45,7 +45,7 @@ namespace Пароид.Views
                 AddToLibrary();
                 string connectionString = "Data Source=192.168.1.69\\SQLEXPRESS;Initial Catalog=Diplom; User=sa; Password = 123; Trusted_Connection = False";
                 string databaseTable = "Cart";
-                string selectQuery = $"DELETE FROM {databaseTable} WHERE Id_App = {selectedapp.AppId} AND Id_User = {int.Parse(Preferences.Get("currentUserId", "0"))}";
+                string selectQuery = $"DELETE FROM {databaseTable} WHERE Id_User = {int.Parse(Preferences.Get("currentUserId", "0"))}";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     //open connection
@@ -92,7 +92,6 @@ namespace Пароид.Views
                 //check if account exists
                 var exists = result.HasRows;
             }
-            DisplayAlert("Успешно", "Пользователь добавлен в друзья", "ОК");
         }
 
         private void AddToLibrary()
