@@ -26,7 +26,7 @@ namespace Пароид.Views
 
             if (item.Title == "Пользователи")
             {
-                return;
+                await Navigation.PushModalAsync(new AdminUsersPage());
             }
             else if (item.Title == "Приложения")
             {

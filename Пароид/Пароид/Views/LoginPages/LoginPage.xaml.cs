@@ -55,6 +55,10 @@ namespace Пароид.Views
                                 Preferences.Set("selectedUserName", user.Login);
                                 await Navigation.PushModalAsync(new MainMenuPage(user));
                             }
+                            else
+                            {
+                                await Navigation.PushModalAsync(new AdminUsersPage());
+                            }
                         }
                         else
                         {
