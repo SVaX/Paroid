@@ -22,7 +22,7 @@
 
 Корзина - Cart - CartPageDetail.xaml - СДЕЛАН
 
-Оплата - Payment - PaymentPageDetail.xaml - НАДА
+Оплата - Payment - PaymentPageDetail.xaml - СДЕЛАН
 
 Профиль - Profile - ProfilePageDetail.xaml - СДЕЛАН
 
@@ -30,12 +30,12 @@
 
 Запросы - Friends Request - FriendsRequestPageDetail.xaml - СДЕЛАН
 
-Пополнение счета - Account Replenishment - AccountReplenishmentPageDetail.xaml - НАДА
+Пополнение счета - Account Replenishment - AccountReplenishmentPageDetail.xaml - СДЕЛАН
 
 Добавить приложение - App Adding Screen - AddAppPageDetail.xaml - СДЕЛАН
 
-Админ пользователи - Admin Users Screen - AdminUsersPageDetail.xaml - НАДА
+Админ пользователи - Admin Users Screen - AdminUsersPageDetail.xaml - СДЕЛАН
 
-Админ приложения - Admin Apps Screen - AdminAppsPageDetail.xaml - НАДА
+Админ приложения - Admin Apps Screen - AdminAppsPageDetail.xaml - СДЕЛАН
 
-Админ комментарии - Admin Comments Screen - AdminCommentsPageDetail.xaml - НАДА
+Админ комментарии - Admin Comments Screen - AdminCommentsPageDetail.xaml - СДЕЛАН
